@@ -1,7 +1,5 @@
 from django.shortcuts import render
 
-from django.http import HttpResponse
-
 
 def index(request):
     template = 'posts/index.html'
@@ -9,4 +7,5 @@ def index(request):
 
 
 def group_posts(request, slug):
-    return HttpResponse(f'Страница с постами группы: {slug}')
+    template = 'posts/group_list.html'
+    return render(request, template)
